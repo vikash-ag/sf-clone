@@ -1,12 +1,12 @@
 {
-  "name": "slackforce",
+  "name": "heroku-sf-int",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Christophe Coenraets <ccoenraets@gmail.com> (http://coenraets.org/)",
+  "author": "Trekbin",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",

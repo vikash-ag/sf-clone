@@ -131,6 +131,7 @@ let upsert = (objectName, externalIdField, externalId, data) => sfrequest(oauth,
 /**
  * Convenience function to invoke APEX REST endpoints
  */
+ /*
 let apexrest = (oauth, path, params) => {
 
     if (path.charAt(0) !== "/") {
@@ -143,11 +144,13 @@ let apexrest = (oauth, path, params) => {
 
     return sfrequest(oauth, path, params);
 };
+*/
 
 /**
  * Convenience function to invoke the Chatter API
  */
-let chatter = (oauth, path, params) => {
+/*
+ let chatter = (oauth, path, params) => {
 
     let basePath = "/services/data/" + API_VERSION + "/chatter";
 
@@ -160,6 +163,7 @@ let chatter = (oauth, path, params) => {
     return sfrequest(oauth, path, params);
 
 };
+*/
 
 /**
  * Convenience function to retrieve user information
@@ -175,5 +179,5 @@ exports.update = update;
 exports.del = del;
 exports.upsert = upsert;
 exports.apexrest = apexrest;
-exports.chatter = chatter;
-exports.whoami = whoami;
+//exports.chatter = chatter;
+//exports.whoami = whoami;

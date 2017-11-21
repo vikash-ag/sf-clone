@@ -4,6 +4,8 @@ let auth = require("./slack-salesforce-auth"),
     force = require("./force"),
     ACCOUNT_TOKEN = process.env.SLACK_ACCOUNT_TOKEN;
 
+console.log("inside account");	
+	
 exports.execute = (req, res) => {
 
     if (req.body.token != ACCOUNT_TOKEN) {
@@ -11,11 +13,12 @@ exports.execute = (req, res) => {
         res.send("Invalid token");
         return;
     }
-
+console.log("inside account 16");	
     let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
         q = "SELECT Id, Name, Phone, BillingAddress FROM Account LIMIT 5";
 
+console.log("inside account 21");			
     force.query(oauthObj, q)
         .then(data => {
 			console.log("response return");

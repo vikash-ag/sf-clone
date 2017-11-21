@@ -23,18 +23,23 @@ console.log("server.js line #20");
 app.use(bodyParser.urlencoded({extended: true}));
 console.log("server.js line #23");
 
-app.post('/actions', actions.handle);
-console.log("server.js line #26");
-//app.post('/pipeline', opportunity.execute);
-//app.post('/contact', contact.execute);
-app.post('/account', account.execute);
-console.log("server.js line #30");
-//app.post('/case', _case.execute);
-//app.post('/whoami', whoami.execute);
-//app.post('/login', auth.loginLink);
-//app.post('/logout', auth.logout);
-app.get('/login/:slackUserId', auth.oauthLogin);
-app.get('/oauthcallback', auth.oauthCallback);
+//app.get('/' , function(req,res){
+	app.get('/actions', actions.handle);
+	console.log("server.js line #26");
+	//app.post('/pipeline', opportunity.execute);
+	//app.post('/contact', contact.execute);
+	app.post('/account', account.execute);
+	console.log("server.js line #30");
+	//app.post('/case', _case.execute);
+	//app.post('/whoami', whoami.execute);
+	//app.post('/login', auth.loginLink);
+	//app.post('/logout', auth.logout);
+	app.get('/login/:slackUserId', auth.oauthLogin);
+	console.log("server.js line #36");
+	app.get('/oauthcallback', auth.oauthCallback);
+	console.log("server.js line #38");
+	
+//});
 
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

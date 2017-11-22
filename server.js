@@ -7,31 +7,26 @@ let express = require('express'),
     actions = require('./modules/actions'),
     app = express();
 
+//var urlencodedparser = bodyParser.urlencoded({extended: true});
+
 app.enable('trust proxy');
 
 app.set('port', process.env.PORT || 5000);
-console.log("port");
 
 app.use('/', express.static(__dirname + '/www')); // serving company logos after successful authentication
-console.log("static");
-
 app.use(bodyParser.urlencoded({extended: true}));
-console.log("bodyparser");
+/*
+app.get('/',function(req,res){
+	res.render('index.html')
 
-	app.post('/actions', actions.handle);
-	/*
-	app.get('/actions',actions.handle,function(req,res){
-		res.redirect("/");
-		//console.log("server.js line #26");
-		//res.redirect(actions.handle);
-	});
-	*/
-	app.post('/account', account.execute);
-	console.log("account in server");
-	app.get('/login/:slackUserId', auth.oauthLogin);
-	console.log("login in server");
-	app.get('/oauthcallback', auth.oauthCallback);
-	console.log("server.js line #34");
+});
+*/
+app.post('/account', account.execute);
+console.log('server.js #27');
+app.get('/login/:slackUserId', auth.oauthLogin);
+console.log('server.js #29');
+app.get('/oauthcallback', auth.oauthCallback);
+console.log('server.js #32');
 
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

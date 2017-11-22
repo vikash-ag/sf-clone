@@ -2,12 +2,12 @@
 
 let auth = require("./slack-salesforce-auth"),
     force = require("./force"),
-    ACCOUNT_TOKEN = process.env.SLACK_ACCOUNT_TOKEN;
-
+    //ACCOUNT_TOKEN = process.env.SLACK_ACCOUNT_TOKEN;
+	ACCOUNT_TOKEN = process.env.HEROKU_ACCOUNT_TOKEN;
 console.log("inside account");	
 	
-exports.execute = (req, res) => {
-
+exports.execute = (req,res) => {
+console.log("account #10")
     if (req.body.token != ACCOUNT_TOKEN) {
         console.log("Invalid token");
         res.send("Invalid token");
